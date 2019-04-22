@@ -18,7 +18,10 @@ public class ExampleController {
     @RequestMapping("/")
     public String echo() {
 
-        return customerService.echo();
+
+        String name=customerService.echo();
+
+        return name;
 
     }
 }

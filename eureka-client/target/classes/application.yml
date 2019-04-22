@@ -4,8 +4,21 @@ server:
 spring:
   application:
     name: eureka-producer
+  datasource:
+    name: inno
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?characterEncoding=utf8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.inno.eurekaclient.Bean
